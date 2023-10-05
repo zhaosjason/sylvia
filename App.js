@@ -15,7 +15,7 @@ export default function App() {
   return (
     <View className="wrapper" style={styles.wrapper}>
       <View className="container_door" style={styles.container_door}>
-        <Door style={{ top: '-30%', left: '2%' }} width={'100%'} height={'150%'} />
+        <Door style={styles.door_svg} width={'100%'} height={'100%'} />
         {/* TODO: Native-CSS door + light experiments */}
         {/* <View className="door" style={styles.door} /> */}
         {/* <RadialGradient className="door_light" style={styles.door_light} /> */}
@@ -39,26 +39,32 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: '#27187E',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
 
   container_door: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    // borderWidth: 1,
+    // borderColor: "red",
   },
 
-  door: {
-    width: '20%',
-    height: '40%',
-    top: '33%',
-    left: '50%',
-    backgroundColor: '#FFB997',
+  door_svg: {
+    // top: '-30%',
+    left: 10,
+    // borderWidth: 1,
+    // borderColor: "red",
   },
 
   // TODO: For better rendering / native device support, it's prob better
   // to generate the door and light with native CSS.
+
+  // door: {
+  //   width: '20%',
+  //   height: '40%',
+  //   top: '33%',
+  //   left: '50%',
+  //   backgroundColor: '#FFB997',
+  // },
 
   // door_light: {
   //   width: '20%',
@@ -85,13 +91,16 @@ const styles = StyleSheet.create({
   container_text: {
     width: '100%',
     height: '100%',
+    flex: 1,
     alignItems: 'center',
     position: 'absolute',
   },
 
   container_title: {
-    top: '65%',
-    paddingLeft: 20,
+    // top: '70%',
+    height: '50%',
+    // position: 'absolute',
+    paddingLeft: 25,
     flexDirection: 'row',
     alignItems: 'flex-end',
     // borderWidth: 1,
@@ -109,9 +118,9 @@ const styles = StyleSheet.create({
   },
 
   container_subtitle: {
-    top: '72%',
-    paddingLeft: 10,
-    flexDirection: 'row',
+    top: '53%',
+    position: 'absolute',
+    paddingLeft: 15,
     textAlign: 'center',
     wordWrap: 'break-word',
     // borderWidth: 1,
