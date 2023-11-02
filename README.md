@@ -9,7 +9,7 @@
 ### Development
 * Working knowledge of [Git](https://www.w3schools.com/git/git_intro.asp?remote=github)
 * Working knowledge of [Bash](https://www.udacity.com/course/shell-workshop--ud206)
-* React Native is used to target Android and iOS.  Web is a tertiary target
+* [React Native](https://reactnative.dev/docs/getting-started) is used to target Android and iOS.  Web is a tertiary target
 * [Expo](https://reactnative.dev/docs/environment-setup) tooling is used to facilitate app development workflow
 
 ### Testing / QA
