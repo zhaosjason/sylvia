@@ -15,7 +15,7 @@ import Door from '../assets/door.svg';
 
 export function SplashScreen({ navigation }) {
   return (
-    <TouchableWithoutFeedback onPress={() => navigation.navigate('Description')}>
+    <TouchableWithoutFeedback onPress={() => navigation.navigate('Login')}>
       <View className="wrapper" style={styles.wrapper}>
         <View className="container_door" style={styles.container_door}>
           <Door style={styles.door_svg} width={'100%'} height={'100%'} />
