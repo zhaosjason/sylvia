@@ -1,16 +1,6 @@
 import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
-// import { RadialGradient } from 'react-native-gradients';
-import Logo from '../assets/logo.svg';
-import Door from '../assets/door.svg';
-
-
-// TODO: Native-CSS door + light experiments
-// const colorList = [
-//   {offset: '0%', color: '#231557', opacity: '1'},
-//   {offset: '29%', color: '#44107A', opacity: '1'},
-//   {offset: '67%', color: '#FF1361', opacity: '1'},
-//   {offset: '100%', color: '#FFF800', opacity: '1'}
-// ]
+import Logo from '../../assets/logo.svg';
+import Door from '../../assets/door.svg';
 
 
 export function SplashScreen({ navigation }) {
@@ -19,11 +9,6 @@ export function SplashScreen({ navigation }) {
       <View className="wrapper" style={styles.wrapper}>
         <View className="container_door" style={styles.container_door}>
           <Door style={styles.door_svg} width={'100%'} height={'100%'} />
-          {/* TODO: Native-CSS door + light experiments */}
-          {/* <View className="door" style={styles.door} /> */}
-          {/* <RadialGradient className="door_light" style={styles.door_light} /> */}
-          {/* <RadialGradient x="50%" y="5i0%" rx="50%" ry="50%" colorList={colorList}/> */}
-          {/* <View style={styles.trapezoid} /> */}
         </View>
         <View className="container_text" style={styles.container_text}>
           <View className="container_title" style={styles.container_title}>

@@ -1,24 +1,46 @@
-import React from 'react';
-import { StyleSheet, Text, SafeAreaView, TextInput, Pressable } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, SafeAreaView, TextInput, Pressable, Alert } from 'react-native';
 
-import Logo from '../assets/logo.svg';
+import { supabase } from '../../lib/supabase';
+import Logo from '../../assets/logo.svg';
 
 
 export function LoginScreen({ navigation }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function signInWithEmail() {
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+
+    if (error) { 
+      Alert.alert(error.message);
+    } else {
+      navigation.navigate("Description");
+    }
+    setLoading(false);
+  }
+
   return (
     <SafeAreaView className="wrapper" style={styles.wrapper}>
       <Logo style={styles.logo} width={60} height={60} />
       <Text style={styles.title}>Log In</Text>
       <TextInput
         style={styles.input}
-        placeholder="Username"
+        placeholder="Email"
         placeholderTextColor="#AAA"
+        onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
         placeholder="Password"
         placeholderTextColor="#AAA"
         secureTextEntry={true}
+        onChangeText={setPassword}
       />
 
       <Text 
@@ -37,7 +59,7 @@ export function LoginScreen({ navigation }) {
 
       <Pressable
         title="Login"
-        onPress={() => navigation.navigate("Description")}
+        onPress={() => signInWithEmail()}
         style={styles.button}
       >
         <Text style={styles.button_title}>></Text>
